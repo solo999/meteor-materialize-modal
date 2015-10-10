@@ -266,22 +266,22 @@ class @MaterializeModalClass
     try
       response =
         submit: true
+      
       switch options.type
         when 'prompt'
           response.value = $(options.inputSelector).val()
         when 'form'
           if context.form?
-            response.value = @fromForm(context.form)
-          else
-            response.value = null
-        else
-          response.value = null
+            response.form = @fromForm(context.form)
+            response.value = response.form
+
       try
         options.callback(null, response)
       catch error
         console.error("MaterializeModal Callback returned Error", error)
         Materialize.toast(error.reason, 3000, 'toast-error')
         return false
+    
     catch error
       options.callback(error, null)
     true
