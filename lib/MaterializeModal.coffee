@@ -190,7 +190,7 @@ class @MaterializeModalClass
         type: 'form'
         title: t9nIt("Edit Record")
         submitLabel: '<i class="material-icons left">save</i>' + t9nIt('save')
-        closeLabel: '<i class="material-icons left">not_interested</i>' + t9nIt('cancel')
+        closeLabel: '<i class="material-icons left">&#xE033;</i>' + t9nIt('cancel')
       , @defaults
 
       if options.smallForm
