@@ -15,13 +15,13 @@ A pattern to display application modal dialogs via [Materialize](http://material
 ## Install
 
 ```bash
-meteor add pfafman:materialize-modal
+meteor add meteorstuff:materialize-modal
 ```
 
 or for the old callback version
 
 ```
-meteor add pfafman:materialize-modal@=0.4.0
+meteor add meteorstuff:materialize-modal@=0.4.0
 ```
 
 
