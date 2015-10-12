@@ -24,6 +24,8 @@ or for the old callback version
 meteor add meteorstuff:materialize-modal@=0.4.0
 ```
 
+You are required to get [Materialize](http://materializecss.com) on your own, either from a [package](https://atmospherejs.com/materialize/materialize) or inserting it manually into your meteor app.  This allows you to either use a CSS or SASS version for more customization.
+
 
 ## Usage
 
