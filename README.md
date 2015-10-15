@@ -43,7 +43,7 @@ You are required to get [Materialize](http://materializecss.com) on your own, ei
 	* rtn.submit - bool true if the user hit the OK/Submit button
 	* rtn.value - applicable data object key:value
 	
-
+* dismissible - (bool) If false, modal will not close when the user clicks the background.
 * bodyTemplate - Name of the template to use as the body for the modal.
 * icon - Markup for the icon to display
 * closeLabel - Text for close/dismiss button

@@ -12,6 +12,7 @@ class @MaterializeModalClass
     submitLabel: 'ok'
     inputSelector: '#prompt-input'
     callback: null
+    dismissible: true
 
 
   constructor: ->
