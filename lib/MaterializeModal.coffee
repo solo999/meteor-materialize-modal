@@ -17,6 +17,7 @@ class @MaterializeModalClass
     opacity: 0.5
 
 
+
   constructor: ->
     #
     # templateOptions:  Setting this reactive var will automatically

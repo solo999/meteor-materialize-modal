@@ -43,7 +43,7 @@ You are required to get [Materialize](http://materializecss.com) on your own, ei
 	* rtn.submit - bool true if the user hit the OK/Submit button
 	* rtn.value - applicable data object key:value
 	
-
+* dismissible - (bool) If false, modal will not close when the user clicks the background.
 * bodyTemplate - Name of the template to use as the body for the modal.
 * icon - Markup for the icon to display
 * closeLabel - Text for close/dismiss button
@@ -51,6 +51,11 @@ You are required to get [Materialize](http://materializecss.com) on your own, ei
 * fixedFooter - (bool) true if you want to use a [fixed footer](http://materializecss.com/modals.html#fixed-footer)
 * bottomSheet - (bool) true if you want a bottom sheet modal
 * fullscreen - (bool) Modal takes up all the full screen
+* opacity - (int) Opacity of modal background default 0.5
+* inDuration - (int) Transition in duration default 200
+* outDuration - (int) Transition out duration default 0 for fullscreen 300 otherwise
+* ready - function() Callback for Modal open
+
 
 ## UI
 You can change the UI by overwriting the CSS.
