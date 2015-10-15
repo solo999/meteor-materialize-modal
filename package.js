@@ -1,7 +1,7 @@
 Package.describe({
   name: "meteorstuff:materialize-modal",
   summary: "Display a modal via Materialize written in coffeescript",
-  version: "1.0.1",
+  version: "1.0.2",
   git: "https://github.com/MeteorStuff/meteor-materialize-modal.git"
 });
 
