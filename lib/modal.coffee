@@ -40,7 +40,7 @@ Template.materializeModal.onRendered ->
   # (1) Update the jQuery handle of the modal instance with the latest
   #     modal DOM element.
   #
-  MaterializeModal.$modal = $ @find '#materializeModal'
+  MaterializeModal.$modal = @$('#materializeModal')
 
   #
   # (2) Compute modal animation duration.
@@ -48,6 +48,9 @@ Template.materializeModal.onRendered ->
   #     Otherwise, 300ms transition.
   #
   if @data.fullscreen then inDuration = 0 else 300
+
+  if @data.inDuration
+    inDuration = @data.inDuration
 
   #
   # (3) Call Materialize's openModal() method to make
@@ -58,12 +61,18 @@ Template.materializeModal.onRendered ->
   # the background.
   #
   MaterializeModal.$modal.openModal
-    in_duration: inDuration
+    dismissible: @data.dismiaaible   # Modal can be dismissed by clicking outside of the modal
+    opacity: @data.opacity           # Opacity of modal background
+    in_duration: inDuration    # Transition in duration
+    out_duration: @data.outDuration  # Transition out duration
+
     ready: ->
       console.log("materializeModal: ready") if DEBUG
+      @ready?()
+
     complete: ->
       console.log("materializeModal: complete") if DEBUG
-      MaterializeModal.close false
+      MaterializeModal.close(false)
 
 
 Template.materializeModal.onDestroyed ->
@@ -115,7 +124,9 @@ Template.materializeModal.events
 
   "submit form#materializeModalForm, click button#submitButton": (e, tmpl) ->
     e.preventDefault()
-    form = tmpl?.$('form#materializeModalForm')
+    form = tmpl.$('form#materializeModalForm')  # This returns the main form defined in this template
+    if form.find('form')?.length > 0
+      form = form.find('form')  # If the body contains a form then we use that.
     console.log('submit event:', e, "form:", form) if DEBUG
     MaterializeModal.close true,
       event: e

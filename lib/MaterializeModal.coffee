@@ -12,6 +12,9 @@ class @MaterializeModalClass
     submitLabel: 'ok'
     inputSelector: '#prompt-input'
     callback: null
+    dismissible: true
+    outDuration: 200
+    opacity: 0.5
 
 
   constructor: ->
@@ -46,10 +49,12 @@ class @MaterializeModalClass
   #
   open: (options) ->
     console.log("MaterializeModal.open()", @) if DEBUG
+    
     #
     # (1) Make sure there's a modal container.
     #
     @injectContainer()
+    
     #
     # (2) Update the this.options ReactiveVar, which will
     #     cause the dynamic Template inside materializeModalContainer
@@ -278,7 +283,7 @@ class @MaterializeModalClass
       try
         options.callback(null, response)
       catch error
-        console.error("MaterializeModal Callback returned Error", error)
+        console.error("MaterializeModal Callback returned Error", error, response)
         Materialize.toast(error.reason, 3000, 'toast-error')
         return false
     
