@@ -59,6 +59,7 @@ Template.materializeModal.onRendered ->
   #
   MaterializeModal.$modal.openModal
     in_duration: inDuration
+    dismissible: @data.dismissible
     ready: ->
       console.log("materializeModal: ready") if DEBUG
     complete: ->
