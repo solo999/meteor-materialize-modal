@@ -247,7 +247,7 @@ class @MaterializeModalClass
   #
   doCancelCallback: ->
     options = @templateOptions.get()
-    return true unless options.callback?
+    return true unless options?.callback?
 
     try
       console.log("materializeModal: doCancelCallback") if DEBUG
@@ -267,7 +267,7 @@ class @MaterializeModalClass
   #
   doSubmitCallback: (context) ->
     options = @templateOptions.get()
-    return true unless options.callback?
+    return true unless options?.callback?
     
     try
       response =
