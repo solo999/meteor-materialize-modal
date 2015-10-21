@@ -61,7 +61,7 @@ Template.materializeModal.onRendered ->
   # the background.
   #
   MaterializeModal.$modal.openModal
-    dismissible: @data.dismiaaible   # Modal can be dismissed by clicking outside of the modal
+    dismissible: @data.dismissible   # Modal can be dismissed by clicking outside of the modal
     opacity: @data.opacity           # Opacity of modal background
     in_duration: inDuration          # Transition in duration
     out_duration: @data.outDuration  # Transition out duration
@@ -70,6 +70,7 @@ Template.materializeModal.onRendered ->
     ready: =>
       console.log("materializeModal: ready") if DEBUG
       @data.ready?()
+
 
     complete: ->
       console.log("materializeModal: complete") if DEBUG
