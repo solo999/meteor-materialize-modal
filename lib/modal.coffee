@@ -67,9 +67,9 @@ Template.materializeModal.onRendered ->
     out_duration: @data.outDuration  # Transition out duration
 
 
-    ready: ->
+    ready: =>
       console.log("materializeModal: ready") if DEBUG
-      @ready?()
+      @data.ready?()
 
     complete: ->
       console.log("materializeModal: complete") if DEBUG
