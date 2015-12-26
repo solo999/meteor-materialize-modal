@@ -7,6 +7,10 @@ A pattern to display application modal dialogs via [Materialize](http://material
 
 *Warning: Only tested on Meteor 1.2+*
 
+### *Note*
+*Before submitting an issue please make sure that the issue is not a problem in [*materializecss*](http://materializecss.com).  All the CSS except for the full screen modal is pulled from the 
+[*materializecss*](http://materializecss.com) framework and we try not to fix issues with that framework in this package.*
+
 ### Version 1.0 Changes
 * *The callbacks have changed form in version 1.0 to reflect the 'node way'.*  So you need to change your callback from `callback(yesNo, ...)` to `callback(error, rtn)`.  `yesNo` is now at `rtn.submit`!  If you don't have time to make the change lock your package at the 0.4.0 version `meteor add pfafman:materialize-modal@=0.4.0`
 
