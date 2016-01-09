@@ -1,3 +1,8 @@
+/*
+  Mostly we want Materializecss to handle the styling and try not to overwrite or modify that.
+  Exceptions are for the Loading and Full page model which are not part of Materializecss.
+*/
+
 .materialize-modal {
   /* color: #000; */
 }
