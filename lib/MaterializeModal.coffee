@@ -17,7 +17,6 @@ class @MaterializeModalClass
     opacity: 0.5
 
 
-
   constructor: ->
     #
     # templateOptions:  Setting this reactive var will automatically
@@ -74,7 +73,8 @@ class @MaterializeModalClass
   #
   close: (submit=false, context=null) ->
     console.log "MaterializeModal.close()" if DEBUG
-    if @templateOptions.get()? # if there are no options, there is no modal -- there is nothing to close!
+    options = @templateOptions.get()
+    if options? # if there are no options, there is no modal -- there is nothing to close!
       #
       # If the user willingly submitted the modal,
       # run doSubmitCallback with context.
@@ -88,6 +88,7 @@ class @MaterializeModalClass
       #
       if cbSuccess
         @$modal.closeModal
+          out_duration: options.outDuration
           complete: =>
             @templateOptions.set null
 
