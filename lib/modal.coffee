@@ -78,7 +78,7 @@ Template.materializeModal.onRendered ->
 
     complete: ->
       console.log("materializeModal: complete") if DEBUG
-      MaterializeModal.close(false)
+      MaterializeModal.close(false, null, false)
 
 
 Template.materializeModal.onDestroyed ->
