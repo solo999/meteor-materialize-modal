@@ -32,6 +32,10 @@ Template.materializeModalContainer.helpers
 Template.materializeModal.onCreated ->
   console.log("Template.materializeModal.onCreated", @data) if DEBUG
 
+  if not Materialize?
+    # Hopefully this will warn someone trying to use this package without first including Materializecss !!!
+    throw new Error("MaterializeModal requires Materializecss !!!")
+
 
 Template.materializeModal.onRendered ->
   console.log("Template.materializeModal.onRendered", @data.title)  if DEBUG

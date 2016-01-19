@@ -18,6 +18,7 @@ class @MaterializeModalClass
 
 
   constructor: ->
+
     #
     # templateOptions:  Setting this reactive var will automatically
     #                   cause materializeModalContainer to re-render.
