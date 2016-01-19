@@ -71,7 +71,7 @@ class @MaterializeModalClass
   #                           - context is the data that might be relevant to
   #                             the submitCallback, such as the submitted form.
   #
-  close: (submit=false, context=null) ->
+  close: (submit=false, context=null, closeModal=true) ->
     console.log "MaterializeModal.close()" if DEBUG
     options = @templateOptions.get()
     if options? # if there are no options, there is no modal -- there is nothing to close!
@@ -87,10 +87,13 @@ class @MaterializeModalClass
       # If the callback had no errors, close the modal.
       #
       if cbSuccess
-        @$modal.closeModal
-          out_duration: options.outDuration
-          complete: =>
-            @templateOptions.set null
+        if closeModal
+          @$modal.closeModal
+            out_duration: options.outDuration
+            complete: =>
+              @templateOptions.set null
+        else
+          @templateOptions.set null
 
 
   #
