@@ -81,7 +81,7 @@ class @MaterializeModalClass
       # run doSubmitCallback with context.
       #
       if submit
-        cbSuccess = @doSubmitCallback(context)
+        cbSuccess = @doSubmitCallback(context) && closeModal
       else
         cbSuccess = @doCancelCallback()
       #

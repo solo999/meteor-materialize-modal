@@ -134,9 +134,7 @@ Template.materializeModal.events
     if form.find('form')?.length > 0
       form = form.find('form')  # If the body contains a form then we use that.
     console.log('submit event:', e, "form:", form) if DEBUG
-    MaterializeModal.close true,
-      event: e
-      form: form
+    MaterializeModal.close true, {event: e, form: form}, @closeOnSubmit
     false # this prevents the page from refreshing on form submission!
 
 
