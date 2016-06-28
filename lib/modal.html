@@ -15,6 +15,7 @@
     {{#if fullscreen}}full-screen{{/if}} {{class}}">
 
     {{#materializeModalForm}}
+      {{#unless replaceModalContent}}
       <div class="modal-content">
         <!-- Add a title, if one was defined -->
         {{#if title}}
@@ -35,6 +36,7 @@
           {{/if}}
         </div>
       </div>
+      {{/unless}}
 
       <!--  Add in footer, if one was defined -->
       {{> Template.dynamic template=modalFooter data=modalFooterData}}
